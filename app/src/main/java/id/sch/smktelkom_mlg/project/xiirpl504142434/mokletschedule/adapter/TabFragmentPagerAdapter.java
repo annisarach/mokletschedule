@@ -4,6 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.fragment.JumatFragment;
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.fragment.KamisFragment;
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.fragment.RabuFragment;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.fragment.SelasaFragment;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.fragment.SeninFragment;
 
@@ -14,7 +17,7 @@ import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.fragment.Seni
 public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
     //nama tab nya
     String[] title = new String[]{
-            "Senin", "Selasa"
+            "Senin", "Selasa", "Rabu","Kamis", "Jumat"
     };
 
     public TabFragmentPagerAdapter(FragmentManager fm) {
@@ -31,6 +34,15 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
                 break;
             case 1:
                 fragment = new SelasaFragment();
+                break;
+            case 2:
+                fragment = new RabuFragment();
+                break;
+            case 3:
+                fragment = new KamisFragment();
+                break;
+            case 4:
+                fragment = new JumatFragment();
                 break;
             default:
                 fragment = null;
