@@ -13,6 +13,7 @@ import android.widget.Button;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.AwalActivity;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.MainActivity;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.R;
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.SharedPrefered;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,7 +44,10 @@ public class SelasaFragment extends Fragment {
         pindah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPrefered.writeString(getActivity(), SharedPrefered.nama, "");
+                SharedPrefered.writeBoolean(getActivity(), SharedPrefered.bool,false);
                 startActivity(new Intent(getActivity().getApplication(), AwalActivity.class));
+                getActivity().finish();
             }
         });
     }

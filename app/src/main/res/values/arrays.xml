@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="kelas">
+        <item>Pilihlah kelas anda</item>
         <item>XIIRPL1</item>
         <item>XIIRPL2</item>
         <item>XIIRPL3</item>

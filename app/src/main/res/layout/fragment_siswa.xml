@@ -31,19 +31,56 @@
         android:id="@+id/textView4"
         android:layout_marginTop="10dp"/>
 
-    <android.support.design.widget.TextInputLayout
+    <TextView
+        android:text="NIS : "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:id="@+id/textViewNIS"
+        android:layout_marginTop="10dp"/>
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/editTextNIS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="NIS" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/editTextNIS1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:maxLength="4" />
+
+            <TextView
+                android:text=" / "
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                android:id="@+id/textViewgaring"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:id="@+id/editTextNIS2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:maxLength="4" />
+
+            <TextView
+                android:text=" - "
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                android:id="@+id/textViewstrip"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:id="@+id/editTextNIS3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:maxLength="3" />
+    </LinearLayout>
 
     <TextView
         android:text="Kelas : "
@@ -64,5 +101,5 @@
         android:layout_height="wrap_content"
         android:text="Next"
         android:layout_gravity="right|bottom"
-        android:id="@+id/button" />
+        android:id="@+id/buttonssw" />
 </LinearLayout>

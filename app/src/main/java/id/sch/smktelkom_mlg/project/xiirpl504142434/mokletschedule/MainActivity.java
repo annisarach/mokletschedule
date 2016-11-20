@@ -1,5 +1,7 @@
 package id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
@@ -9,8 +11,10 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.adapter.TabFragmentPagerAdapter;
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.SharedPrefered;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -18,16 +22,19 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private ViewPager pager;
     private TabLayout tabs;
+    public static Context contextOfApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        check();
+
         //set up toolbar
         toolbar = (Toolbar)findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Moklet Schedule");
+        getSupportActionBar().setTitle("MokletSchedule");
 
         //inisialisasi tab dan pager
         pager = (ViewPager)findViewById(R.id.pager);
@@ -47,6 +54,21 @@ public class MainActivity extends AppCompatActivity
         //konfigurasi Gravity Fill untuk Tab berada di posisi yang proposional
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);
 
+    }
+
+    private void check()
+    {
+        if (SharedPrefered.readBoolean(this, SharedPrefered.bool, false) == false)
+        {
+            startActivity(new Intent(this, AwalActivity.class));
+        }
+        else
+        {
+            if (SharedPrefered.readString(this, SharedPrefered.nama, "") != "")
+                Toast.makeText(this, "Selamat Datang "+SharedPrefered.readString(this, SharedPrefered.nama, ""), Toast.LENGTH_LONG).show();
+            else if (SharedPrefered.readString(this, SharedPrefered.guru, "") != "")
+                Toast.makeText(this, "Selamat Datang Bapak/Ibu "+SharedPrefered.readString(this, SharedPrefered.guru, ""), Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
