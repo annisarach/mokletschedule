@@ -1,105 +1,111 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.FragmentAwal.SiswaFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Siswa"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textSize="30dp"
-        android:id="@+id/textView3" />
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_gravity="center" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Silahkan masukkan data diri Anda : "
-        android:id="@+id/textView4"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:text="NIS : "
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:id="@+id/textViewNIS"
-        android:layout_marginTop="10dp"/>
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        tools:context="id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.FragmentAwal.SiswaFragment">
 
-            <EditText
-                android:id="@+id/editTextNIS1"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned"
-                android:maxLength="4" />
+        <!-- TODO: Update blank fragment layout -->
 
-            <TextView
-                android:text=" / "
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-                android:id="@+id/textViewgaring"
-                android:layout_marginTop="10dp" />
 
-            <EditText
-                android:id="@+id/editTextNIS2"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned"
-                android:maxLength="4" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Siswa"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="30dp"
+            android:id="@+id/textView3" />
 
-            <TextView
-                android:text=" - "
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-                android:id="@+id/textViewstrip"
-                android:layout_marginTop="10dp" />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/siswa"
+            android:layout_gravity="center" />
 
-            <EditText
-                android:id="@+id/editTextNIS3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned"
-                android:maxLength="3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silahkan masukkan data diri Anda : "
+            android:id="@+id/textView4"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:text="NIS : "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:id="@+id/textViewNIS"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextNIS1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:maxLength="4" />
+
+                <TextView
+                    android:text=" / "
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:id="@+id/textViewgaring"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/editTextNIS2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:maxLength="4" />
+
+                <TextView
+                    android:text=" - "
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:id="@+id/textViewstrip"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/editTextNIS3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:maxLength="3" />
+        </LinearLayout>
+
+        <TextView
+            android:text="Kelas : "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:id="@+id/textViewKelas"
+            android:layout_marginTop="10dp"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/kelas"
+            android:id="@+id/spinnerKelas" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:layout_gravity="right|bottom"
+            android:id="@+id/buttonssw" />
     </LinearLayout>
 
-    <TextView
-        android:text="Kelas : "
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:id="@+id/textViewKelas"
-        android:layout_marginTop="10dp"/>
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/kelas"
-        android:id="@+id/spinnerKelas" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:layout_gravity="right|bottom"
-        android:id="@+id/buttonssw" />
-</LinearLayout>
+</ScrollView>

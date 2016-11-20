@@ -1,12 +1,14 @@
 package id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity
         if (SharedPrefered.readBoolean(this, SharedPrefered.bool, false) == false)
         {
             startActivity(new Intent(this, AwalActivity.class));
+            finish();
         }
         else
         {
@@ -95,4 +98,45 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_about:
+                break;
+
+            case R.id.action_setting:
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+                builder1.setMessage("Apakah Anda Ingin Keluar?");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.nama, "");
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.kelas, "");
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.nis, "");
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.guru, "");
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.kog, "");
+                                SharedPrefered.writeBoolean(MainActivity.this, SharedPrefered.bool,false);
+                                startActivity(new Intent(MainActivity.this, AwalActivity.class));
+                                finish();
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+
+                break;
+        }
+        return true;
+    }
 }

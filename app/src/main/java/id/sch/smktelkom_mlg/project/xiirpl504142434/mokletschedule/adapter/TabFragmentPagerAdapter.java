@@ -17,7 +17,7 @@ import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.fragment.Seni
 public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
     //nama tab nya
     String[] title = new String[]{
-            "Senin", "Selasa", "Rabu","Kamis", "Jumat"
+            "Mon", "Tue", "Wed","Thu", "Fri"
     };
 
     public TabFragmentPagerAdapter(FragmentManager fm) {

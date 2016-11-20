@@ -16,44 +16,44 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        app:srcCompat="@drawable/tschedule"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Siswa"
         android:id="@+id/buttonSiswa"
-        android:layout_below="@+id/buttonGuru"
-        android:layout_alignLeft="@+id/buttonGuru"
-        android:layout_alignStart="@+id/buttonGuru"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="28dp"
         android:layout_alignRight="@+id/buttonGuru"
-        android:layout_alignEnd="@+id/buttonGuru" />
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/imageView"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Masuk sebagai:"
-        android:id="@+id/textView2"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignEnd="@+id/buttonGuru"
+        android:layout_alignLeft="@+id/buttonGuru"
+        android:layout_alignStart="@+id/buttonGuru" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Guru"
         android:id="@+id/buttonGuru"
-        android:layout_marginTop="22dp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
+        android:layout_above="@+id/buttonSiswa"
         android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView" />
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masuk sebagai:"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -44,10 +44,7 @@ public class SelasaFragment extends Fragment {
         pindah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPrefered.writeString(getActivity(), SharedPrefered.nama, "");
-                SharedPrefered.writeBoolean(getActivity(), SharedPrefered.bool,false);
-                startActivity(new Intent(getActivity().getApplication(), AwalActivity.class));
-                getActivity().finish();
+
             }
         });
     }
