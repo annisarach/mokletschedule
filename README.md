@@ -1,7 +1,7 @@
-<h1>Telkom Schedule</h1>
+<h1>Moklet Schedule</h1>
 
 <h3>Penjelasan Aplikasi</h3>
-<p>  Telkom Schedule adalah aplikasi jadwal pelajaran untuk siswa SMK Telkom Malang. Aplikasi ini dibuat untuk mempermudah siswa 
+<p>  Moklet Schedule adalah aplikasi jadwal pelajaran untuk siswa SMK Telkom Malang. Aplikasi ini dibuat untuk mempermudah siswa 
 untuk melihat jadwal pelajaran, selain itu juga mempermudah guru melihat jadwal mengajar.
 
 <h3>Screenshoot :</h3>
