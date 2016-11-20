@@ -34,26 +34,26 @@ Nama : Annisa Rachmadiyanti <br>
 Kelas : XII RPL 5 <br>
 Urut : 04 <br>
 NIS : 4295/1193-070 <br>
-User github :annisarach
+User github :annisarach<br>
 Nama Sekolah : SMK Telkom Malang <br>
 
 Nama : Dini Nikmatul Hasanah <br>
 Kelas : XII RPL 5 <br>
 Urut : 14 <br>
 NIS : 4325/1223.063 <br>
-User github :DiniNikmatulHasanah
+User github :DiniNikmatulHasanah<br>
 Nama Sekolah : SMK Telkom Malang <br>
 
 Nama : Mufti Alie Satriawan <br>
 Kelas : XII RPL 5 <br>
 Urut : 24 <br>
 NIS : 4381/1279-070 <br>
-User github :iyakiwan
+User github :iyakiwan<br>
 Nama Sekolah : SMK Telkom Malang <br>
 
 Nama : Shanty Ayu Dwi Darmawan <br>
 Kelas : XII RPL 5 <br>
 Urut : 34 <br>
 NIS : 4441/1339/070 <br>
-User github :shantydarmawan
+User github :shantydarmawan<br>
 Nama Sekolah : SMK Telkom Malang <br>
