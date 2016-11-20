@@ -13,6 +13,7 @@ untuk melihat jadwal pelajaran, selain itu juga mempermudah guru melihat jadwal 
 <p>Masuk sebagai siswa</p>
 ![gambar2.jpg](https://github.com/annisarach/mokletschedule/blob/master/gambar2.jpg)</br>
 <p>Tampilan jadwal pelajaran</p>
+![jadwal%20siswa.jpg](https://github.com/annisarach/mokletschedule/blob/master/jadwal%20siswa.jpg)
 ![gambar3.jpg](https://github.com/annisarach/mokletschedule/blob/master/gambar3.jpg)</br>
 
 <h2>GURU</h2>
@@ -20,9 +21,10 @@ untuk melihat jadwal pelajaran, selain itu juga mempermudah guru melihat jadwal 
 ![guru.jpg](https://github.com/annisarach/mokletschedule/blob/master/guru.jpg)
 <p>Tampilan jadwal mengajar</p>
 ![jadwal%20guru.jpg](https://github.com/annisarach/mokletschedule/blob/master/jadwal%20guru.jpg)
-<p>About</p>
+<p>About Aplikasi</p>
 ![about.jpg](https://github.com/annisarach/mokletschedule/blob/master/about.jpg)
-
+<p>Keluar Aplikasi</p>
+![keluar.jpg](https://github.com/annisarach/mokletschedule/blob/master/keluar.jpg)
 <h3>Video Aplikasi</h3>
 <p></p>
 
