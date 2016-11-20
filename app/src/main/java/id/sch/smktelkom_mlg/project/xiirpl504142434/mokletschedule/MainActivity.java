@@ -114,10 +114,10 @@ public class MainActivity extends AppCompatActivity
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 SharedPrefered.writeString(MainActivity.this, SharedPrefered.nama, "");
-                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.kelas, "");
-                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.nis, "");
+                                /*SharedPrefered.writeString(MainActivity.this, SharedPrefered.kelas, "");
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.nis, "");*/
                                 SharedPrefered.writeString(MainActivity.this, SharedPrefered.guru, "");
-                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.kog, "");
+                                /*SharedPrefered.writeString(MainActivity.this, SharedPrefered.kog, "");*/
                                 SharedPrefered.writeBoolean(MainActivity.this, SharedPrefered.bool,false);
                                 startActivity(new Intent(MainActivity.this, AwalActivity.class));
                                 finish();
