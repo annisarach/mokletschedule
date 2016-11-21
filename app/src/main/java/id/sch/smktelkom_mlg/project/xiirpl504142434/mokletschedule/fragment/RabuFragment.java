@@ -29,7 +29,7 @@ import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.R;
  */
 public class RabuFragment extends Fragment {
 
-    private String TAG = SeninFragment.class.getSimpleName();
+    private String TAG = RabuFragment.class.getSimpleName();
 
     private ProgressDialog pDialog;
     private ListView lv;

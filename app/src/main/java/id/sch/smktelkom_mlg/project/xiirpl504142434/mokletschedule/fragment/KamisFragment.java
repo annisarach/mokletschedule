@@ -29,7 +29,7 @@ import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.R;
  */
 public class KamisFragment extends Fragment {
 
-    private String TAG = SeninFragment.class.getSimpleName();
+    private String TAG = KamisFragment.class.getSimpleName();
 
     private ProgressDialog pDialog;
     private ListView lv;
@@ -47,7 +47,7 @@ public class KamisFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_rabu, container, false);
+        View view = inflater.inflate(R.layout.fragment_kamis, container, false);
 
         contactList = new ArrayList<>();
 
