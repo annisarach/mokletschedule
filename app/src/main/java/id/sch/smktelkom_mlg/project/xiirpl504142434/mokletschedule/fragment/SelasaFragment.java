@@ -25,6 +25,7 @@ import java.util.HashMap;
 
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.HttpHandler;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.R;
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.SharedPrefered;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,7 +37,7 @@ public class SelasaFragment extends Fragment {
     private ProgressDialog pDialog;
     private ListView lv;
 
-    private static String url = "http://tsschedule.16mb.com/jadwal.php?hari=selasa&&kelas=XIIRPL5";
+    private String url = "http://tsschedule.16mb.com/jadwal.php?hari=selasa&&kelas=";
 
     ArrayList<HashMap<String, String>> contactList;
 
@@ -51,7 +52,6 @@ public class SelasaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_selasa, container, false);
-        //pindah = (Button)view.findViewById(R.id.buttonlink);
 
         contactList = new ArrayList<>();
 
@@ -60,18 +60,6 @@ public class SelasaFragment extends Fragment {
         new GetContacts().execute();
 
         return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-     /*   pindah.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });*/
     }
 
     private class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -92,7 +80,7 @@ public class SelasaFragment extends Fragment {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url);
+            String jsonStr = sh.makeServiceCall(url+ SharedPrefered.readString(getActivity(), SharedPrefered.kelas, ""));
 
             Log.e(TAG, "Response from url: " + jsonStr);
 

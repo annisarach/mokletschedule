@@ -23,6 +23,7 @@ import java.util.HashMap;
 
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.HttpHandler;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.R;
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.SharedPrefered;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,7 +35,7 @@ public class KamisFragment extends Fragment {
     private ProgressDialog pDialog;
     private ListView lv;
 
-    private static String url = "http://tsschedule.16mb.com/jadwal.php?hari=kamis&&kelas=XIIRPL5";
+    private String url = "http://tsschedule.16mb.com/jadwal.php?hari=kamis&&kelas=";
 
     ArrayList<HashMap<String, String>> contactList;
 
@@ -76,7 +77,7 @@ public class KamisFragment extends Fragment {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url);
+            String jsonStr = sh.makeServiceCall(url+ SharedPrefered.readString(getActivity(), SharedPrefered.kelas, ""));
 
             Log.e(TAG, "Response from url: " + jsonStr);
 

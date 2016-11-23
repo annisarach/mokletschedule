@@ -31,13 +31,12 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        check();
-
         //set up toolbar
         toolbar = (Toolbar)findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("MokletSchedule");
 
+        Toast.makeText(this, "Selamat Datang "+SharedPrefered.readString(this, SharedPrefered.nama, ""), Toast.LENGTH_LONG).show();
         //inisialisasi tab dan pager
         pager = (ViewPager)findViewById(R.id.pager);
         tabs = (TabLayout)findViewById(R.id.tabs);
@@ -56,22 +55,6 @@ public class MainActivity extends AppCompatActivity
         //konfigurasi Gravity Fill untuk Tab berada di posisi yang proposional
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);
 
-    }
-
-    private void check()
-    {
-        if (SharedPrefered.readBoolean(this, SharedPrefered.bool, false) == false)
-        {
-            startActivity(new Intent(this, AwalActivity.class));
-            finish();
-        }
-        else
-        {
-            if (SharedPrefered.readString(this, SharedPrefered.nama, "") != "")
-                Toast.makeText(this, "Selamat Datang "+SharedPrefered.readString(this, SharedPrefered.nama, ""), Toast.LENGTH_LONG).show();
-            else if (SharedPrefered.readString(this, SharedPrefered.guru, "") != "")
-                Toast.makeText(this, "Selamat Datang Bapak/Ibu "+SharedPrefered.readString(this, SharedPrefered.guru, ""), Toast.LENGTH_LONG).show();
-        }
     }
 
     @Override
@@ -115,10 +98,10 @@ public class MainActivity extends AppCompatActivity
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 SharedPrefered.writeString(MainActivity.this, SharedPrefered.nama, "");
-                                /*SharedPrefered.writeString(MainActivity.this, SharedPrefered.kelas, "");
-                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.nis, "");*/
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.kelas, "");
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.nis, "");
                                 SharedPrefered.writeString(MainActivity.this, SharedPrefered.guru, "");
-                                /*SharedPrefered.writeString(MainActivity.this, SharedPrefered.kog, "");*/
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.kog, "");
                                 SharedPrefered.writeBoolean(MainActivity.this, SharedPrefered.bool,false);
                                 startActivity(new Intent(MainActivity.this, AwalActivity.class));
                                 finish();

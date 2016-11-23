@@ -154,8 +154,8 @@ public class SiswaFragment extends Fragment {
         b.putString("nama",nama);
         Intent in=new Intent(getApplicationContext(),user.class);*/
         SharedPrefered.writeString(getActivity(), SharedPrefered.nama,nama);
-        SharedPrefered.writeString(getActivity(), SharedPrefered.nis,kelas);
-        SharedPrefered.writeString(getActivity(), SharedPrefered.kelas,nis);
+        SharedPrefered.writeString(getActivity(), SharedPrefered.nis,nis);
+        SharedPrefered.writeString(getActivity(), SharedPrefered.kelas,kelas);
         SharedPrefered.writeBoolean(getActivity(), SharedPrefered.bool,true);
 
         /*tv1.setText(SharedPrefered.readString(getActivity(), SharedPrefered.nama, ""));
@@ -163,7 +163,6 @@ public class SiswaFragment extends Fragment {
         tv3.setText(SharedPrefered.readString(getActivity(), SharedPrefered.kelas, ""));*/
         Intent in=new Intent(getActivity(),MainActivity.class);
 
-        //in.putExtras(b);
         startActivity(in);
         getActivity().finish();
     }
