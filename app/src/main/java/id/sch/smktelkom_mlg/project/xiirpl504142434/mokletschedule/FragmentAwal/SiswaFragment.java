@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +30,7 @@ import java.util.Map;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.AwalActivity;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.MainActivity;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.R;
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.fragment.SeninFragment;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.AppVar;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.SharedPrefered;
 
@@ -37,12 +39,15 @@ import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.SharedP
  */
 public class SiswaFragment extends Fragment {
 
-    EditText nis1, nis2, nis3;
+    private String TAG = SeninFragment.class.getSimpleName();
+    EditText nis1, nis2;
+    TextView nis3;
     Spinner spkls;
     String gabung = "";
     Button bsiswa;
     TextView tv1, tv2, tv3;
     ProgressDialog pDialog;
+    int a, b =167;
 
     public SiswaFragment() {
         // Required empty public constructor
@@ -57,14 +62,13 @@ public class SiswaFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_siswa, container, false);
         nis1 = (EditText) view.findViewById(R.id.editTextNIS1);
         nis2 = (EditText) view.findViewById(R.id.editTextNIS2);
-        nis3 = (EditText) view.findViewById(R.id.editTextNIS3);
+        nis3 = (TextView) view.findViewById(R.id.editTextNIS3);
         spkls = (Spinner) view.findViewById(R.id.spinnerKelas);
         bsiswa = (Button) view.findViewById(R.id.buttonssw);
 
         tv1 = (TextView) view.findViewById(R.id.textView4);
         tv2 = (TextView) view.findViewById(R.id.textViewNIS);
         tv3 = (TextView) view.findViewById(R.id.textViewKelas);
-
 
 
         ((AwalActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -85,10 +89,13 @@ public class SiswaFragment extends Fragment {
 
     private void login() {
         //Getting values from edit texts
-        String ns1 = nis1.getText().toString();
+        String value= nis1.getText().toString();
+        int finalValue =Integer.parseInt(value);
+        a = finalValue - 167;
         String ns2 = nis2.getText().toString();
-        String ns3 = nis3.getText().toString();
-        gabung = (ns1+ "/" + ns2 +"-"+ ns3);
+        //String ns3 = nis3.getText().toString();
+        gabung = (a+ "/" + ns2 +"-"+ "070");
+        Log.e(TAG, "Response from url: "+ gabung);
         //tv1.setText(gabung);
         final String nis = gabung;
         final String kelas = spkls.getSelectedItem().toString().trim();
@@ -117,7 +124,7 @@ public class SiswaFragment extends Fragment {
                     Toast.makeText(getActivity(), "Invalid username or password", Toast.LENGTH_LONG).show();
                     nis1.setText("");
                     nis2.setText("");
-                    nis3.setText("");
+                    //nis3.setText("");
                     spkls.setSelection(0);
                 }
             }
@@ -130,7 +137,7 @@ public class SiswaFragment extends Fragment {
                         Toast.makeText(getActivity(), "The server unreachable", Toast.LENGTH_LONG).show();
                         nis1.setText("");
                         nis2.setText("");
-                        nis3.setText("");
+                        //nis3.setText("");
                         spkls.setSelection(0);
                     }
                 }){ @Override
