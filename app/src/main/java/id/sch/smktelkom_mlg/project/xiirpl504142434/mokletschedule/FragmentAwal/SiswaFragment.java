@@ -40,9 +40,8 @@ import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.SharedP
 public class SiswaFragment extends Fragment {
 
     private String TAG = SeninFragment.class.getSimpleName();
-    EditText nis1, nis2;
-    TextView nis3;
-    Spinner spkls;
+    EditText nis1, nis2, nis3;
+    //Spinner spkls;
     String gabung = "";
     Button bsiswa;
     TextView tv1, tv2, tv3;
@@ -62,13 +61,13 @@ public class SiswaFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_siswa, container, false);
         nis1 = (EditText) view.findViewById(R.id.editTextNIS1);
         nis2 = (EditText) view.findViewById(R.id.editTextNIS2);
-        nis3 = (TextView) view.findViewById(R.id.editTextNIS3);
-        spkls = (Spinner) view.findViewById(R.id.spinnerKelas);
+        nis3 = (EditText) view.findViewById(R.id.editTextNIS3);
+        //spkls = (Spinner) view.findViewById(R.id.spinnerKelas);
         bsiswa = (Button) view.findViewById(R.id.buttonssw);
 
         tv1 = (TextView) view.findViewById(R.id.textView4);
         tv2 = (TextView) view.findViewById(R.id.textViewNIS);
-        tv3 = (TextView) view.findViewById(R.id.textViewKelas);
+        //tv3 = (TextView) view.findViewById(R.id.textViewKelas);
 
 
         ((AwalActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -88,71 +87,121 @@ public class SiswaFragment extends Fragment {
     }
 
     private void login() {
-        //Getting values from edit texts
-        String value= nis1.getText().toString();
-        int finalValue =Integer.parseInt(value);
-        a = finalValue - 167;
-        String ns2 = nis2.getText().toString();
-        //String ns3 = nis3.getText().toString();
-        gabung = (a+ "/" + ns2 +"-"+ "070");
-        Log.e(TAG, "Response from url: "+ gabung);
-        //tv1.setText(gabung);
-        final String nis = gabung;
-        final String kelas = spkls.getSelectedItem().toString().trim();
-        pDialog.setMessage("Login Process...");
-        showDialog();
-        //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppVar.LOGIN_URL, new Response.Listener<String>(){
-            @Override
-            public void onResponse(String response) {
+        if (isValid()) {
+            //Getting values from edit texts
+            String value = nis1.getText().toString();
+            int finalValue = Integer.parseInt(value);
+            a = finalValue - 167;
+            String ns2 = nis2.getText().toString();
+            String ns3 = nis3.getText().toString();
+            gabung = (a + "/" + ns2 + "-" + ns3);
+            Log.e(TAG, "Response from url: " + gabung);
+            //tv1.setText(gabung);
+            final String nis = gabung;
+            //final String kelas = spkls.getSelectedItem().toString().trim();
+            pDialog.setMessage("Login Process...");
+            showDialog();
+            //Creating a string request
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, AppVar.LOGIN_URL, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
 
-                //If we are getting success from server
-                if (response.contains(AppVar.LOGIN)) {
-                    hideDialog();
-                    //adminKR01
-                    String [] x = response.split("#");
-                    String NIS = x[1];
-                    String Nama = x[2];
-                    String Kelas = x[3];
-                    gotoCourseActivity(NIS, Nama, Kelas);
-
-                }
-
-                else {
-                    hideDialog();
-                    //Displaying an error message on toast
-                    Toast.makeText(getActivity(), "Invalid username or password", Toast.LENGTH_LONG).show();
-                    nis1.setText("");
-                    nis2.setText("");
-                    //nis3.setText("");
-                    spkls.setSelection(0);
-                }
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //You can handle error here if you want
+                    //If we are getting success from server
+                    if (response.contains(AppVar.LOGIN)) {
                         hideDialog();
-                        Toast.makeText(getActivity(), "The server unreachable", Toast.LENGTH_LONG).show();
+                        //adminKR01
+                        String[] x = response.split("#");
+                        String NIS = x[1];
+                        String Nama = x[2];
+                        String Kelas = x[3];
+                        gotoCourseActivity(NIS, Nama, Kelas);
+
+                    } else {
+                        hideDialog();
+                        //Displaying an error message on toast
+                        Toast.makeText(getActivity(), "Invalid username or password", Toast.LENGTH_LONG).show();
                         nis1.setText("");
                         nis2.setText("");
-                        //nis3.setText("");
-                        spkls.setSelection(0);
+                        nis3.setText("");
+                        //spkls.setSelection(0);
                     }
-                }){ @Override
-        protected Map<String, String> getParams() throws AuthFailureError {
-            Map<String, String> params = new HashMap<>();
-            //Adding parameters to request
-            params.put(AppVar.KEY_NIS, nis);
-            params.put(AppVar.KEY_kelas, kelas);
+                }
+            },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            //You can handle error here if you want
+                            hideDialog();
+                            Toast.makeText(getActivity(), "The server unreachable", Toast.LENGTH_LONG).show();
+                            nis1.setText("");
+                            nis2.setText("");
+                            nis3.setText("");
+                            //spkls.setSelection(0);
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    //Adding parameters to request
+                    params.put(AppVar.KEY_NIS, nis);
+                    //params.put(AppVar.KEY_kelas, kelas);
 
-            //returning parameter
-            return params;
-        }};
+                    //returning parameter
+                    return params;
+                }
+            };
 
-        //Adding the string request to the queue
-        Volley.newRequestQueue(getActivity()).add(stringRequest);
+            //Adding the string request to the queue
+            Volley.newRequestQueue(getActivity()).add(stringRequest);
+        }
+    }
+
+    private boolean isValid() {
+        boolean valid = true;
+        String ns1 = nis1.getText().toString();
+        String ns2 = nis2.getText().toString();
+        String ns3 = nis3.getText().toString();
+
+        if (ns1.isEmpty())
+        {
+            nis1.setError("NIS harus diisi(1)");
+            valid = false;
+        } else if (ns1.length() != 4)
+        {
+            nis1.setError("Minimal harus diisi 4 angka");
+            valid = false;
+        } else
+        {
+            nis1.setError(null);
+        }
+
+        if (ns2.isEmpty())
+        {
+            nis2.setError("NIS harus diisi(2)");
+            valid = false;
+        } else if (ns2.length() != 4)
+        {
+            nis2.setError("Minimal harus diisi 4 angka");
+            valid = false;
+        } else
+        {
+            nis2.setError(null);
+        }
+
+        if (ns3.isEmpty())
+        {
+            nis3.setError("NIS harus diisi(3)");
+            valid = false;
+        } else if (ns3.length() != 3)
+        {
+            nis3.setError("Minimal harus diisi 3 angka");
+            valid = false;
+        } else
+        {
+            nis3.setError(null);
+        }
+
+        return valid;
     }
 
     private void gotoCourseActivity(String nis, String nama, String kelas) {

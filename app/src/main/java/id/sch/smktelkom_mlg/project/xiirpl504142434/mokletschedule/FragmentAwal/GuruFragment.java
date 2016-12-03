@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.AwalActivity;
+import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.GuruActivity;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.MainActivity;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.R;
 import id.sch.smktelkom_mlg.project.xiirpl504142434.mokletschedule.model.AppVar;
@@ -69,55 +70,77 @@ public class GuruFragment extends Fragment {
     }
 
     private void lgngr() {
-        final String edGr = edguru.getText().toString().trim();
-        pDialog.setMessage("Login Process...");
-        showDialog();
-        //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppVar.LOGIN_LIK, new Response.Listener<String>(){
-            @Override
-            public void onResponse(String response) {
+        if (isValid()) {
+            final String edGr = edguru.getText().toString().trim();
+            pDialog.setMessage("Login Process...");
+            showDialog();
+            //Creating a string request
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, AppVar.LOGIN_LIK, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
 
-                //If we are getting success from server
-                if (response.contains(AppVar.LOGIN)) {
-                    hideDialog();
-                    //adminKR01
-                    String [] x = response.split("#");
-                    String KoG = x[1];
-                    String Guru = x[2];
-                    gotoCourseActivity(KoG, Guru);
-
-                }
-
-                else {
-                    hideDialog();
-                    //Displaying an error message on toast
-                    Toast.makeText(getActivity(), "Invalid username or password", Toast.LENGTH_LONG).show();
-                    edguru.setText("");
-                }
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //You can handle error here if you want
+                    //If we are getting success from server
+                    if (response.contains(AppVar.LOGIN)) {
                         hideDialog();
-                        Toast.makeText(getActivity(), "The server unreachable", Toast.LENGTH_LONG).show();
+                        //adminKR01
+                        String[] x = response.split("#");
+                        String KoG = x[1];
+                        String Guru = x[2];
+                        gotoCourseActivity(KoG, Guru);
+
+                    } else {
+                        hideDialog();
+                        //Displaying an error message on toast
+                        Toast.makeText(getActivity(), "Invalid username or password", Toast.LENGTH_LONG).show();
                         edguru.setText("");
-
                     }
-                }){ @Override
-        protected Map<String, String> getParams() throws AuthFailureError {
-            Map<String, String> params = new HashMap<>();
-            //Adding parameters to request
-            params.put(AppVar.KEY_kog, edGr);
-            //params.put(AppVar.KEY_kelas, kelas);
+                }
+            },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            //You can handle error here if you want
+                            hideDialog();
+                            Toast.makeText(getActivity(), "The server unreachable", Toast.LENGTH_LONG).show();
+                            edguru.setText("");
 
-            //returning parameter
-            return params;
-        }};
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    //Adding parameters to request
+                    params.put(AppVar.KEY_kog, edGr);
+                    //params.put(AppVar.KEY_kelas, kelas);
 
-        //Adding the string request to the queue
-        Volley.newRequestQueue(getActivity()).add(stringRequest);
+                    //returning parameter
+                    return params;
+                }
+            };
+
+            //Adding the string request to the queue
+            Volley.newRequestQueue(getActivity()).add(stringRequest);
+        }
+    }
+
+    private boolean isValid() {
+        boolean valid = true;
+        String ns1 = edguru.getText().toString();
+
+        if (ns1.isEmpty())
+        {
+            edguru.setError("Kode Guru harus diisi");
+            valid = false;
+        } else if (ns1.length() < 2)
+        {
+            edguru.setError("Format Kode Guru AH");
+            valid = false;
+        } else
+        {
+            edguru.setError(null);
+        }
+
+        return valid;
     }
 
     private void gotoCourseActivity(String koG, String guru) {
@@ -132,7 +155,7 @@ public class GuruFragment extends Fragment {
         /*tv1.setText(SharedPrefered.readString(getActivity(), SharedPrefered.nama, ""));
         tv2.setText(SharedPrefered.readString(getActivity(), SharedPrefered.nis, ""));*/
         //Toast.makeText(this, "Selamat Datang Bapak/Ibu "+(SharedPrefered.readString(getActivity(), SharedPrefered.guru, "")), Toast.LENGTH_LONG).show();
-        Intent in=new Intent(getActivity(),MainActivity.class);
+        Intent in=new Intent(getActivity(),GuruActivity.class);
 
         //in.putExtras(b);
         startActivity(in);

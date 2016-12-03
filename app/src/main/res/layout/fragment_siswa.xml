@@ -78,34 +78,37 @@
                     android:id="@+id/textViewstrip"
                     android:layout_marginTop="10dp" />
 
-                <TextView
+                <EditText
+                    android:inputType="numberSigned"
                     android:id="@+id/editTextNIS3"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:maxLength="3"
-                    android:text="070"/>
+                    android:maxLength="3"/>
         </LinearLayout>
 
-        <TextView
+        <!--<TextView
             android:text="Kelas : "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:id="@+id/textViewKelas"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="30dp"/>
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/kelas"
-            android:id="@+id/spinnerKelas" />
+            android:id="@+id/spinnerKelas" />-->
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"
             android:layout_gravity="right|bottom"
+
+            android:layout_marginTop="20dp"
             android:id="@+id/buttonssw" />
+
     </LinearLayout>
 
 </ScrollView>

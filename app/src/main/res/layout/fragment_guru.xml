@@ -34,7 +34,7 @@
                 android:id="@+id/editTextGuru"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="text|textCapSentences"
                 android:hint="Kode Guru" />
         </android.support.design.widget.TextInputLayout>
 

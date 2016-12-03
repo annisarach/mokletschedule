@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
         //set up toolbar
         toolbar = (Toolbar)findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("MokletSchedule");
+        getSupportActionBar().setTitle("Siswa Schedule");
 
         Toast.makeText(this, "Selamat Datang "+SharedPrefered.readString(this, SharedPrefered.nama, ""), Toast.LENGTH_LONG).show();
         //inisialisasi tab dan pager
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        MenuItem searchItem = menu.findItem(R.id.action_search);
+        /*MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchview = (SearchView) MenuItemCompat.getActionView(searchItem);
 
         searchview.setOnQueryTextListener(
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity
                         return true;
                     }
                 }
-        );
+        );*/
         return true;
     }
 
@@ -100,8 +100,8 @@ public class MainActivity extends AppCompatActivity
                                 SharedPrefered.writeString(MainActivity.this, SharedPrefered.nama, "");
                                 SharedPrefered.writeString(MainActivity.this, SharedPrefered.kelas, "");
                                 SharedPrefered.writeString(MainActivity.this, SharedPrefered.nis, "");
-                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.guru, "");
-                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.kog, "");
+                                /*SharedPrefered.writeString(MainActivity.this, SharedPrefered.guru, "");
+                                SharedPrefered.writeString(MainActivity.this, SharedPrefered.kog, "");*/
                                 SharedPrefered.writeBoolean(MainActivity.this, SharedPrefered.bool,false);
                                 startActivity(new Intent(MainActivity.this, AwalActivity.class));
                                 finish();
