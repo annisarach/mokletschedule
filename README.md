@@ -7,24 +7,24 @@ untuk melihat jadwal pelajaran, selain itu juga mempermudah guru melihat jadwal 
 <h3>Screenshoot :</h3>
 
 <p>Tampilan pertama kali aplikasi dijalankan</p>
-![gambar%201.jpg](https://github.com/annisarach/mokletschedule/blob/master/gambar%201.jpg)</br>
+![1](https://cloud.githubusercontent.com/assets/14922004/20863670/e9f174fe-ba04-11e6-9c6c-be41000eeca1.png)</br>
 
 <h2>SISWA</h2>
 <p>Masuk sebagai siswa</p>
-![gambar2.jpg](https://github.com/annisarach/mokletschedule/blob/master/gambar2.jpg)</br>
+![2](https://cloud.githubusercontent.com/assets/14922004/20863671/ea1a705c-ba04-11e6-9fe2-e728679920fa.png)</br>
 <p>Tampilan jadwal pelajaran</p>
-![jadwal%20siswa.jpg](https://github.com/annisarach/mokletschedule/blob/master/jadwal%20siswa.jpg)
+![7](https://cloud.githubusercontent.com/assets/14922004/20863669/e9bedefe-ba04-11e6-8c2f-70beb45ee4f0.png)
 ![gambar3.jpg](https://github.com/annisarach/mokletschedule/blob/master/gambar3.jpg)</br>
 
 <h2>GURU</h2>
 <p>Masuk sebagai guru</p>
-![guru.jpg](https://github.com/annisarach/mokletschedule/blob/master/guru.jpg)
+![3](https://cloud.githubusercontent.com/assets/14922004/20863672/ea1ad40c-ba04-11e6-98aa-ef0f23dc4ad1.png)
 <p>Tampilan jadwal mengajar</p>
-![jadwal%20guru.jpg](https://github.com/annisarach/mokletschedule/blob/master/jadwal%20guru.jpg)
+![4](https://cloud.githubusercontent.com/assets/14922004/20863675/ea1f3790-ba04-11e6-8ae7-3005898b5f9f.png)
 <p>About Aplikasi</p>
-![about.jpg](https://github.com/annisarach/mokletschedule/blob/master/about.jpg)
+![5](https://cloud.githubusercontent.com/assets/14922004/20863674/ea1d750e-ba04-11e6-9d6d-818c1aed842c.png)
 <p>Keluar Aplikasi</p>
-![keluar.jpg](https://github.com/annisarach/mokletschedule/blob/master/keluar.jpg)
+![6](https://cloud.githubusercontent.com/assets/14922004/20863673/ea1c229e-ba04-11e6-9916-f9114139bfb2.png)
 <h3>Video Aplikasi</h3>
 <p></p>
 
