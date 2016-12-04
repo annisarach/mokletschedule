@@ -29,7 +29,7 @@ untuk melihat jadwal pelajaran, selain itu juga mempermudah guru melihat jadwal 
 <p></p>
 
 <h3>Link Aplikasi</h3>
-<p>https://drive.google.com/open?id=0B5OEManDZVFia0JoYVJ5am9Qa2M</p>
+<p>https://drive.google.com/file/d/0BwbRv6LE4idwTTdNc1dhM3NCR1U/view</p>
 
 <h3>Identitas :</h3>
 Nama : Annisa Rachmadiyanti <br>
