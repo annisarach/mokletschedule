@@ -31,6 +31,9 @@ untuk melihat jadwal pelajaran, selain itu juga mempermudah guru melihat jadwal 
 <h3>Link Aplikasi</h3>
 <p>https://drive.google.com/file/d/0BwbRv6LE4idwTTdNc1dhM3NCR1U/view</p>
 
+<h3>Link Video</h3>
+<p>https://www.youtube.com/watch?v=JAHa9_G_CEw&feature=youtu.be</p>
+
 <h3>Identitas :</h3>
 Nama : Annisa Rachmadiyanti <br>
 Kelas : XII RPL 5 <br>
