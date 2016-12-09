@@ -62,3 +62,8 @@ Urut : 34 <br>
 NIS : 4441/1339/070 <br>
 User github :shantydarmawan<br>
 Nama Sekolah : SMK Telkom Malang <br>
+
+<h3>Contoh User Siswa</h3>
+<p> 4325/1223.070
+<h3>Contoh User Guru</h3>
+<p> C13
